@@ -1,0 +1,261 @@
+:root {
+  --primary-fontstyle: 'Staatliches', sans-serif;
+  --secondary-fontstyle: 'Palanquin', sans-serif;
+
+  font-size: 62.5%;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  max-width: 45rem;
+
+  font-family: var(--primary-fontstyle);
+
+  background: #EFF1FF;
+}
+
+.page header {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  animation: topdown 1s;
+}
+
+header .heading {
+  background-color: #8E9AAF;
+  height: 30rem;
+
+  width: 100%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+header img {
+  margin: 2.2rem;
+}
+
+header h1 {
+  background-color: #CBC0D3;
+  padding: 0.8rem;
+
+  font-weight: 400;
+  font-size: clamp(4rem, 1rem + 4vw, 5rem);
+  line-height: 3.4rem;
+/* identical to box height, or 85% */
+
+  letter-spacing: 0.5rem;
+
+  color: #FFFFFF;
+
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+ header p {
+  max-width: 34rem;
+
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 2.3rem;
+  font-family: var(--secondary-fontstyle);
+
+  color: #23053A;
+  
+  margin: 1.4rem 4rem 6rem;
+}
+
+.card-wrapper {
+  display: grid;
+  text-align: center;
+
+  animation: downtop 1s;
+}
+
+main .card {
+  margin-bottom: 3.2rem;
+  position: relative;
+}
+
+.card img {
+  margin: 0 0.5rem;
+  object-fit: fill;
+
+  transition: 0.2s;
+}
+
+.card span {
+  position:absolute;
+  left: 20%;
+  top: 42%;
+
+  padding: 0.5rem 2.5rem;
+  background: #FEEAFA;
+  border-radius: 5rem;
+
+  font-weight: 400;
+  font-size: 3rem;
+  line-height: 3.4rem;
+
+  letter-spacing: 0.05em;
+
+  color: #4A4E69;
+}
+
+footer {
+  display: none;
+
+  text-align: center;
+  margin: 4.5rem 0;
+
+  font-size: 1.4rem;
+  line-height: 2.8rem;
+  font-family: var(--secondary-fontstyle);
+}
+
+footer a {
+  text-decoration: none;
+  color: #4A4E69;
+  font-weight:bold;
+}
+
+.card img:hover {
+  cursor: pointer;
+  transform: scale(1.09);
+}
+
+@media (min-width: 1000px) {
+
+  header img {
+    margin: 3.2rem 0;
+  }
+
+  header h1 {
+    padding: 2rem;
+  }
+
+  body {
+    margin: 0;
+    height: 100%;
+    max-width: 130rem;
+  }
+
+  .page{
+    display: flex;
+    max-width: 130rem;
+    align-items: center;
+    margin-right: 5rem;
+  }
+
+  header {
+    min-width: 38rem;
+    background-color: #8E9AAF;
+    height: 100vh;
+    margin-right: 5rem;
+  }
+
+  header p {
+    font-size: clamp(1rem, 1rem + 2vw, 2rem);
+    color: #FFFFFF;
+
+    margin: 4rem 4rem 6rem;
+    max-width: 28.5rem;
+  }
+
+  main .card {
+    margin: 0;
+  }
+
+  .card span {
+    display: none;
+  }
+
+  .card-wrapper {
+    grid-template-areas: "Paletas Shakes Massas"
+    "Picole Shakes Sucos"
+    "Picole Delivery Sucos";
+    
+    gap: 2rem;
+
+    height: fit-content;
+    width: 100%;
+    margin-top: 2rem;
+    
+    
+  
+  }
+
+  .card-wrapper div:nth-child(1) {
+    grid-area: Paletas;
+  }
+
+  .card-wrapper div:nth-child(2) {
+    grid-area: Shakes;
+  }
+
+  .card-wrapper div:nth-child(3) {
+    grid-area: Massas;
+  }
+
+  .card-wrapper div:nth-child(4) {
+    grid-area: Sucos;
+  }
+
+  .card-wrapper div:nth-child(5) {
+    grid-area: Picole;
+  }
+
+  .card-wrapper div:nth-child(6) {
+    grid-area: Delivery;
+  }
+
+  footer {
+    display: block;
+  }
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+@keyframes topdown /*nome escolhido da animação*/ {
+  0% {
+    opacity: 0;
+    transform: translateY(-15px); /*vai mover 15px para cima*/
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+@keyframes downtop /*nome escolhido da animação*/ {
+  0% {
+    opacity: 0;
+    transform: translateY(15px); /*vai mover 15px para cima*/
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
